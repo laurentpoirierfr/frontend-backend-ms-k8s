@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  backend-app:
+    image: backend-app:latest
+    container_name: backend-app
+    environment:
+      PORT: 9090
+      GIN_MODE: release
+    ports:
+      - "9090:9090"      
+
+  frontend-app:
+    image: frontend-app:latest
+    container_name: frontend-app
+    environment:
+      PORT: 8080
+      BACKEND_URL: http://backend-app:9090
+    ports:
+      - "8080:8080"      
+    depends_on:
+      - backend-app

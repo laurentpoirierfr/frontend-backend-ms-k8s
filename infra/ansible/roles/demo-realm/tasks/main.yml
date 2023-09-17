@@ -1,0 +1,27 @@
+---
+# tasks file for demo-realm
+- name: Initialisation {{ KEYCLOAK_REALM }} realm
+  ansible.builtin.debug:
+    msg:
+    - "Initialisation {{ KEYCLOAK_REALM }} realm"
+
+- name: Create or update Keycloak realm {{ KEYCLOAK_REALM }}
+  community.general.keycloak_realm:
+    auth_client_id: admin-cli
+    auth_keycloak_url: "{{ KEYCLOAK_AUTH_URL }}"
+    auth_realm: master
+    auth_username: "{{ KEYCLOAK_USERNAME }}"
+    auth_password: "{{ KEYCLOAK_PASSWORD }}"
+    id: "{{ KEYCLOAK_REALM }}"
+    realm: "{{ KEYCLOAK_REALM }}"
+    state: present    
+
+# - name: Create or update Keycloak client (minimal example), authentication with credentials
+#   community.general.keycloak_client:
+#     auth_keycloak_url: "{{ KEYCLOAK_AUTH_URL }}"
+#     auth_realm: "{{ KEYCLOAK_REALM }}"
+#     auth_username: "{{ KEYCLOAK_USERNAME }}"
+#     auth_password: "{{ KEYCLOAK_PASSWORD }}"
+#     client_id: "{{ CLIENT_ID }}"
+#     state: present
+#   delegate_to: localhost    

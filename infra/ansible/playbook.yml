@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  roles:
+    - role: './roles/demo-realm'
+  vars:
+      KEYCLOAK_USERNAME: admin
+      KEYCLOAK_PASSWORD: password
+      KEYCLOAK_REALM: demo
+      KEYCLOAK_AUTH_URL: http://localhost:8080/auth
+      CLIENT_ID: test

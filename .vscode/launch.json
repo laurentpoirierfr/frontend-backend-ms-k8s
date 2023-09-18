@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch BFF",
+            "name": "Launch backend-app",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/bff/cmd/main.go"
+            "program": "${workspaceFolder}/app/backend-app/cmd/main.go"
         },
         {
             "name": "Run Chrome",

@@ -5,6 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch frontend-app",    
+            "command": "yarn start",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/app/frontend-app",
+            "env": {
+                "NODE_OPTIONS": "--openssl-legacy-provider"
+            }
+        },
+        {
             "name": "Launch backend-app",
             "type": "go",
             "request": "launch",
@@ -17,6 +27,6 @@
             "request": "launch",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
-          }  
+        }  
     ]
 }

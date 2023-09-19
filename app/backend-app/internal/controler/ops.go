@@ -33,7 +33,7 @@ func NewOpsController(context context.Context, config util.Config) *OpsControlle
 func (ctrl *OpsController) Info(c *gin.Context) {
 	c.JSON(200, domain.Info{
 		Version:     "0.1.0",
-		Name:        "bff",
-		Description: "Service BFF.",
+		Name:        "backend-app",
+		Description: "Service backend-app.",
 	})
 }

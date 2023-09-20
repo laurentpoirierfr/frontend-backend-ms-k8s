@@ -1,14 +1,14 @@
 import React from "react";
 
 
-const Contact = () => {
+const Login = () => {
   return (
-    <div id="Contact" style={{height:"800px"}}>
+    <div id="Login" style={{height:"800px"}}>
       <h1 style={{fontSize:"50px",padding:"20%"}}>
-        Contact
+      Login
       </h1>
     </div>
   );
 };
 
-export default Contact;
+export default Login;

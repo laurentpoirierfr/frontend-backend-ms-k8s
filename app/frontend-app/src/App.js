@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import About from './Pages/About';
-import Contact from './Pages/Contact';
+import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Skills from './Pages/Skiils';
 import Projects from './Pages/Projects';
@@ -16,7 +16,7 @@ function App() {
       <About />
       <Skills />
       <Projects/>
-      <Contact/>
+      <Login/>
     </div>
   );
 }

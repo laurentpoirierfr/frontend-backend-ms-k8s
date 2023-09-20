@@ -7,7 +7,7 @@ const Name = () => {
       fontSize={{ base: "18px", md: "24px", lg: "30px" }}
       style={{ textShadow: "#FC0 1px 0 10px" }}
     >
-      App
+      frontend-app [v0.1.0]
     </Text>
 
     // <Show breakpoint='(max-width: 1000px)'>

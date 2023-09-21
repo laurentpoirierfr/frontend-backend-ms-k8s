@@ -1,0 +1,93 @@
+version: "3"
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"      
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  keycloak:
+    # build: .
+    image: keycloack-ck-theme:latest
+    container_name: keycloak
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_SCHEMA: public
+      DB_PASSWORD: password
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: password
+    ports:
+      - 7070:8080
+    volumes:
+      - ./themes/demo:/opt/jboss/keycloak/themes/demo      
+    depends_on:
+      - postgres
+
+# ================================================================================================
+# Backend-app
+# ================================================================================================
+  backend-app:
+    image: backend-app:latest
+    container_name: backend-app
+    environment:
+      PORT: 9090
+      GIN_MODE: release
+    ports:
+      - "9090:9090"      
+
+# ================================================================================================
+# Frontend-app
+# ================================================================================================
+  frontend-oauth2-proxy:
+    container_name: oauth2-proxy
+    image: bitnami/oauth2-proxy:latest
+    command:
+      - --upstream=http://frontend-app:8080
+      - --http-address=0.0.0.0:4180
+      - --reverse-proxy=true
+      - --cookie-httponly=true
+      - --cookie-secure=true
+      - --cookie-domain=.whatevermydomainishere.com
+      - --whitelist-domain=[.whatevermydomainishere.com,.otherdomain.com,.foobardomain.io]]
+      - --request-logging=false
+      - --auth-logging=false
+      - --standard-logging=true
+      - --session-store-type=redis
+      # - --redis-connection-url=redis://a_redis_container_name/2
+    entrypoint:
+      - oauth2-proxy
+    environment:
+      - OAUTH2_PROXY_CLIENT_ID=my-app-id
+      - OAUTH2_PROXY_CLIENT_SECRET=QJeBrh09y4IK5bfTy9PojXgRf3Xa9PGe
+      # - OAUTH2_PROXY_COOKIE_SECRET=
+      - OAUTH2_PROXY_EMAIL_DOMAINS=mydomain.com
+      - OAUTH2_PROXY_PROVIDER=keycloak-oidc
+      - OAUTH2_PROXY_OIDC_ISSUER_URL=http://keycloak:7070/realms/demo
+      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:8097
+      - http_address=0.0.0.0:8097
+
+  frontend-app:
+    image: frontend-app:latest
+    container_name: frontend-app
+    environment:
+      PORT: 8080
+      BACKEND_URL: http://backend-app:9090
+    ports:
+      - "8080:8080"      
+    depends_on:
+      - backend-app      
+# ================================================================================================      

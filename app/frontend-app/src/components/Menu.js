@@ -2,43 +2,24 @@ import './Menu.css';
 
 function Menu() {
 
-
   return (
 
     <div id="container">
       <ul id="menu">
-        <li><a href="#">About Me</a>
+        <li><a href="#">Activités</a>
           <ul>
             <li><a href="#">Lorem ipsum dolor</a></li>
             <li><a href="#">Maecenas lacinia sem</a></li>
             <li><a href="#">Suspendisse fringilla</a></li>
           </ul>
         </li>
-        <li><a href="#">Portfolio</a>
+        <li><a href="#">Documentation</a>
           <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Maecenas dignissim fermentum luctus</a></li>
-            <li><a href="#">Suspendisse fringilla</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Maecenas lacinia sem</a></li>
-            <li><a href="#">Suspendisse fringilla</a></li>
+            <li><a href="#">Fonctionnelle</a></li>
+            <li><a href="#">Technique</a></li>
           </ul>
         </li>
-        <li><a href="#">Clients</a>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Maecenas lacinia sem</a></li>
-            <li><a href="#">Suspendisse fringilla</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Contact Me</a>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Maecenas dignissim fermentum luctus</a></li>
-            <li><a href="#">Suspendisse fringilla</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Support</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
     </div>
   );

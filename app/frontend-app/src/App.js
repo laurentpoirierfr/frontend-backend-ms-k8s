@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-import './components/Menu';
 import Menu from './components/Menu';
 
 function App() {

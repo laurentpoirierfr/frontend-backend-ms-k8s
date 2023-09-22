@@ -11,8 +11,8 @@ type Menu struct {
 }
 
 type MenuItem struct {
-	ID        string     `json:"id"`
+	ID        string     `json:"id,omitempty"`
 	Title     string     `json:"title"`
 	Url       string     `json:"url"`
-	MenuItems []MenuItem `json:"submenu,omitempty"`
+	MenuItems []MenuItem `json:"items,omitempty"`
 }

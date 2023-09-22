@@ -34,30 +34,40 @@ func (ctrl *IndexController) Menus(c *gin.Context) {
 	var menuItems []domain.MenuItem
 
 	menuItem := domain.MenuItem{}
+	menuItem.ID = "010"
 	menuItem.Title = "Home"
 	menuItem.Url = "/"
 	menuItems = append(menuItems, menuItem)
-
-	menuItem.Title = "About"
-	menuItem.Url = "/about"
-	menuItems = append(menuItems, menuItem)
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	submenu := domain.MenuItem{}
+	submenu.ID = "021"
 	submenu.Title = "web design"
 	submenu.Url = "web-design"
 	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
 
+	submenu.ID = "022"
 	submenu.Title = "web development"
 	submenu.Url = "web-dev"
 	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
 
+	submenu.ID = "023"
+	submenu.Title = "backend"
+	submenu.Url = "backend"
+	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
+
+	menuItem.ID = "020"
 	menuItem.Title = "Services"
 	menuItem.Url = "/services"
 	menuItems = append(menuItems, menuItem)
 
 	menu := domain.Menu{}
 	menu.MenuItems = menuItems
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	menuItem.ID = "030"
+	menuItem.Title = "About"
+	menuItem.Url = "/about"
+	menuItem.MenuItems = nil
+	menuItems = append(menuItems, menuItem)
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	c.JSON(http.StatusOK, menuItems)

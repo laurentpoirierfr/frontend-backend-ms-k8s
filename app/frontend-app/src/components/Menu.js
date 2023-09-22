@@ -11,7 +11,6 @@ function Menu() {
     });
   }, []);
 
-  // ===================================================================
   const TocItem = ({ toc }) => {
     const subItem = (toc.items || []).map(item => (
       <TocItem toc={item} />
@@ -22,7 +21,7 @@ function Menu() {
         <a href={toc.url}>{toc.title}</a>
         {toc.items && toc.items.length &&
           (
-            <ul >
+            <ul>
               {subItem}
             </ul>
           )
@@ -39,13 +38,11 @@ function Menu() {
     </ul>
   )
 
-
-
   return (
     <div id="container">
       <TableOfContents toc={menu} />
     </div>
   );
 }
-// ===================================================================
+
 export default Menu;

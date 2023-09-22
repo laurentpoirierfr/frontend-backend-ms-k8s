@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/gofrs/uuid"
 	"github.com/laurentpoirierfr/bff/internal/domain"
 	"github.com/laurentpoirierfr/bff/util"
 )
@@ -34,28 +35,28 @@ func (ctrl *IndexController) Menus(c *gin.Context) {
 	var menuItems []domain.MenuItem
 
 	menuItem := domain.MenuItem{}
-	menuItem.ID = "010"
+	menuItem.ID = UUIDGenerate()
 	menuItem.Title = "Home"
 	menuItem.Url = "/"
 	menuItems = append(menuItems, menuItem)
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	submenu := domain.MenuItem{}
-	submenu.ID = "021"
-	submenu.Title = "web design"
-	submenu.Url = "web-design"
+	submenu.ID = UUIDGenerate()
+	submenu.Title = "ms-service-01"
+	submenu.Url = "ms-service-01"
 	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
 
-	submenu.ID = "022"
-	submenu.Title = "web development"
-	submenu.Url = "web-dev"
+	submenu.ID = UUIDGenerate()
+	submenu.Title = "ms-service-02"
+	submenu.Url = "ms-service-02"
 	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
 
-	submenu.ID = "023"
-	submenu.Title = "backend"
-	submenu.Url = "backend"
+	submenu.ID = UUIDGenerate()
+	submenu.Title = "ms-service-03"
+	submenu.Url = "ms-service-03"
 	menuItem.MenuItems = append(menuItem.MenuItems, submenu)
 
-	menuItem.ID = "020"
+	menuItem.ID = UUIDGenerate()
 	menuItem.Title = "Services"
 	menuItem.Url = "/services"
 	menuItems = append(menuItems, menuItem)
@@ -63,9 +64,15 @@ func (ctrl *IndexController) Menus(c *gin.Context) {
 	menu := domain.Menu{}
 	menu.MenuItems = menuItems
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	menuItem.ID = "030"
+	menuItem.ID = UUIDGenerate()
 	menuItem.Title = "About"
 	menuItem.Url = "/about"
+	menuItem.MenuItems = nil
+	menuItems = append(menuItems, menuItem)
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	menuItem.ID = UUIDGenerate()
+	menuItem.Title = "Login"
+	menuItem.Url = "/login"
 	menuItem.MenuItems = nil
 	menuItems = append(menuItems, menuItem)
 	////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,60 +80,7 @@ func (ctrl *IndexController) Menus(c *gin.Context) {
 	c.JSON(http.StatusOK, menuItems)
 }
 
-// [
-//   {
-//     title: 'Home',
-//     url: '/',
-//   },
-//   {
-//     title: 'Services',
-//     url: '/services',
-//     submenu: [
-//       {
-//         title: 'web design',
-//         url: 'web-design',
-//       },
-//       {
-//         title: 'web development',
-//         url: 'web-dev',
-//         submenu: [
-//           {
-//             title: 'Frontend',
-//             url: 'frontend',
-//           },
-//           {
-//             title: 'Backend',
-//             submenu: [
-//               {
-//                 title: 'NodeJS',
-//                 url: 'node',
-//               },
-//               {
-//                 title: 'PHP',
-//                 url: 'php',
-//               },
-//             ],
-//           },
-//         ],
-//       },
-//       {
-//         title: 'SEO',
-//         url: 'seo',
-//       },
-//     ],
-//   },
-//   {
-//     title: 'About',
-//     url: '/about',
-//     submenu: [
-//       {
-//         title: 'Who we are',
-//         url: 'who-we-are',
-//       },
-//       {
-//         title: 'Our values',
-//         url: 'our-values',
-//       },
-//     ],
-//   },
-// ];
+func UUIDGenerate() string {
+	id, _ := uuid.NewV4()
+	return id.String()
+}

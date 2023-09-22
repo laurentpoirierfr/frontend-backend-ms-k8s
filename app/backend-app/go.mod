@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/gin-gonic/gin v1.9.1
+	github.com/gofrs/uuid v4.4.0+incompatible
 	github.com/gookit/slog v0.5.4
 	github.com/spf13/viper v1.16.0
 	github.com/swaggo/files v1.0.1

@@ -61,8 +61,6 @@ func (ctrl *IndexController) Menus(c *gin.Context) {
 	menuItem.Url = "/services"
 	menuItems = append(menuItems, menuItem)
 
-	menu := domain.Menu{}
-	menu.MenuItems = menuItems
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	menuItem.ID = UUIDGenerate()
 	menuItem.Title = "About"

@@ -1,0 +1,20 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+Table menu_items {
+  id integer [primary key]
+  parent_id  integer
+  title varchar
+  url varchar
+  target varchar
+  profiles integer
+}
+
+Table profiles {
+  id  integer [primary key]
+  key integer
+  title  varchar
+  description  varchar
+}
+
+
+Ref: menu_items.parent_id > menu_items.id // many-to-one

@@ -4,12 +4,11 @@ CREATE TABLE "menu_items" (
   "title" varchar,
   "url" varchar,
   "target" varchar,
-  "profiles" integer
+  "profiles" varchar
 );
 
 CREATE TABLE "profiles" (
   "id" integer PRIMARY KEY,
-  "key" integer,
   "title" varchar,
   "description" varchar
 );

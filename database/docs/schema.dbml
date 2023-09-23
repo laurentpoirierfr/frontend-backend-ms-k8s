@@ -6,12 +6,11 @@ Table menu_items {
   title varchar
   url varchar
   target varchar
-  profiles integer
+  profiles varchar
 }
 
 Table profiles {
   id  integer [primary key]
-  key integer
   title  varchar
   description  varchar
 }

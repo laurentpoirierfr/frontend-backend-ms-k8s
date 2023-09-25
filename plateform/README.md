@@ -72,7 +72,7 @@ $ kubectl apply -n postgresql -f pv.yml
 $ kubectl apply -n postgresql -f pvc.yml
 
 $ export ADMIN_PASSWORD=password
-$ export USER_NAME=username
+$ export USER_NAME=postresql
 $ export USER_PASWWORD=password
 $ export DATABASE=homezone
 

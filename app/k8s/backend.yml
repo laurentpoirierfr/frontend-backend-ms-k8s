@@ -28,10 +28,10 @@ spec:
         env:
           - name: PORT
             value: "8080"
-        resources:
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
+        # resources:
+        #   limits:
+        #     memory: "256Mi"
+        #     cpu: "500m"
         ports:
         - containerPort: 8080        
 ---
@@ -56,14 +56,14 @@ metadata:
   namespace: homezone-dev
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-    kubernetes.io/ingress.class: nginx
+    spec.ingressClassName: nginx
 spec:
   tls:
   - hosts:
-    - backend.homezone.dev
+    - backend.local
     secretName: ingress-cert
   rules:
-    - host: "backend.homezone.dev"
+    - host: "backend.local"
       http:
         paths:
           - path: /

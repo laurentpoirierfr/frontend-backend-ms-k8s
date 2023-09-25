@@ -15,8 +15,8 @@ docker-build:
 docker-run:
 	docker run --rm -p 9090:9090 ${IMAGE_NAME}
 
-docker-push:
+docker-push: docker-build
 	eval $(minikube docker-env) && minikube image load ${IMAGE_NAME}
-	eval $(minikube docker-env) && minikube cache list
+	eval $(minikube docker-env) && minikube image list | grep ${IMAGE_NAME}
 
 .PHONY: gererate swagger test

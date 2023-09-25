@@ -8,4 +8,4 @@ docker-run:
 
 docker-push:
 	eval $(minikube docker-env) && minikube image load ${IMAGE_NAME}
-	eval $(minikube docker-env) && minikube image list | grep latest
+	eval $(minikube docker-env) && minikube image list | grep ${IMAGE_NAME}

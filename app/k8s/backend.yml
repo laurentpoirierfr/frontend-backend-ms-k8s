@@ -58,8 +58,12 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     kubernetes.io/ingress.class: nginx
 spec:
+  tls:
+  - hosts:
+    - backend.homezone.dev
+    secretName: ingress-cert
   rules:
-    - host: backend.homezone.dev
+    - host: "backend.homezone.dev"
       http:
         paths:
           - path: /

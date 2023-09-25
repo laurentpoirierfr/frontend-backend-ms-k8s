@@ -27,4 +27,3 @@ docker-push: docker-build
 
 .PHONY: gererate swagger test
 
-

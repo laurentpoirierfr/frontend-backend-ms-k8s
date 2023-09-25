@@ -16,16 +16,30 @@ $ openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 \
 
 ``` bash
 $ kubectl -n kube-system create secret tls mkcert --key homezone.dev.key --cert homezone.dev.cert
-$ minikube addons configure ingress
+$ minikube addons configure ingress # secret/mkcert
 $ minikube addons disable ingress
 $ minikube addons enable ingress
 $ kubectl -n ingress-nginx get deployment ingress-nginx-controller -o yaml | grep "kube-system"
 ```
 
 
+Autre façon de faire
 
 
+``` bash
+$ kubectl create secret tls ingress-cert --namespace homezone-dev --key=homezone.dev.key --cert=homezone.dev.cert -o yaml
+$ kubectl get secret -n homezone-dev
+``` 
 
+``` bash
+$ kubectl apply -f certs-manager.yml
+```
+
+Reference
+
+* https://klaushofrichter.medium.com/minikube-and-lets-encrypt-6e407aabb8ac
+* https://snyk.io/fr/blog/setting-up-ssl-tls-for-kubernetes-ingress/
+* https://itnext.io/setting-up-self-signed-https-access-to-local-dev-k8s-cluster-in-minikube-539bc62ad62f
 
 
 

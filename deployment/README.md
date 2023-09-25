@@ -167,6 +167,16 @@ spec:
 $ kubectl apply -n postgresql -f ingress.yml 
 ```
 
+
+Installation du cert-manager
+
+```bash
+$ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.13.0/cert-manager.yaml
+```
+
+
+
+
 ## Construire l'image keycloack
 
 ```bash

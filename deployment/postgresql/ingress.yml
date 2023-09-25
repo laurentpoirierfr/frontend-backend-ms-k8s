@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: postgresql-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: postgresql.homezone.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:  
+              service:
+                name: postgres-postgresql
+                port:  
+                  number: 5432

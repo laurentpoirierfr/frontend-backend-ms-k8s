@@ -2,6 +2,8 @@
 
 ## Installation de Minikube
 
+* https://kubernetes.io/fr/docs/tasks/tools/install-minikube/
+
 ```bash
 $ minikube start --memory 8192 --cpus 4
 $ minikube addons enable metrics-server

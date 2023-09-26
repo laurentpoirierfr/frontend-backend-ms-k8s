@@ -10,7 +10,7 @@ $ minikube addons enable ingress-dns
 $ minikube ip
 ```
 
-* minikube ip ==> 192.168.49.2
+* minikube ip ==> **192.168.49.2**
 
 ```bash
 $ sudo vi /etc/resolv.conf
@@ -35,9 +35,6 @@ ou bien dans **/etc/hosts**
 192.168.49.2   backend.local
 192.168.49.2   frontend.local
 ```
-
-
-
 
 ## Installation du cert-manager
 

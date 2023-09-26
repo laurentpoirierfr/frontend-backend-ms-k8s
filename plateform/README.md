@@ -1,6 +1,6 @@
 # README
 
-## Installation de Minikube
+## Installation de Minikube
 
 * https://kubernetes.io/fr/docs/tasks/tools/install-minikube/
 

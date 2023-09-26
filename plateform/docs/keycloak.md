@@ -1,4 +1,13 @@
-# Installation
+# Keycloak
+
+## Construire l'image keycloack
+
+```bash
+$ cd keycloak
+$ make docker-push
+```
+
+## Installation
 
 ```bash
 $ kubectl create ns keycloak

@@ -28,6 +28,17 @@ nameserver 192.168.49.2
 timeout 5
 ```
 
+ou bien dans **/etc/hosts**
+
+```bash
+192.168.49.2   keycloak.local
+192.168.49.2   backend.local
+192.168.49.2   frontend.local
+```
+
+
+
+
 ## Installation du cert-manager
 
 ```bash

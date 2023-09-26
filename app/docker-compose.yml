@@ -4,7 +4,7 @@ services:
 # Backend-app
 # ================================================================================================
   backend-app:
-    image: backend-app:latest
+    image: bluehousemax/backend-app:latest
     container_name: backend-app
     environment:
       PORT: 9090
@@ -16,7 +16,7 @@ services:
 # Frontend-app
 # ================================================================================================
   frontend-app:
-    image: frontend-app:latest
+    image: bluehousemax/frontend-app:latest
     container_name: frontend-app
     environment:
       PORT: 8080

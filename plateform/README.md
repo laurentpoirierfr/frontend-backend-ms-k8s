@@ -49,4 +49,7 @@ $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1
 * https://alxrodav.medium.com/keycloak-custom-login-theme-21be10ad3f4
 * https://github.com/briantward/ansible-keycloak/tree/main
 * https://www.talkingquickly.co.uk/webapp-authentication-keycloak-OAuth2-proxy-nginx-ingress-kubernetes
+
+
+* https://ibrahimhkoyuncu.medium.com/kubernetes-ingress-external-authentication-with-oauth2-proxy-and-keycloak-9924a3b2d34a
 * https://symbiosis.host/blog/oauth2-proxy

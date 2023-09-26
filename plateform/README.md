@@ -10,6 +10,7 @@
 | k8s | v1.27.4 | 
 | kubectl | v1.28.2 | 
 | helm | v3.12.3 | 
+| k9s | dev | 
 
 
 ## Installation de Minikube

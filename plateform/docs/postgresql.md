@@ -5,7 +5,7 @@
 ```bash
 $ export NAMESPACE=postgresql
 $ kubectl create ns ${NAMESPACE}
-$ helm show values bitnami/postgresql > values-bitnami.yaml
+#$ helm show values bitnami/postgresql > values-bitnami.yaml
 $ helm install postgresql bitnami/postgresql -f values-bitnami.yaml -n ${NAMESPACE}
 ```
 ## Installation de postgresql

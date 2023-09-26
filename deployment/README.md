@@ -1,12 +1,12 @@
 # README
 
-## Helm template 
+## Helm template debug
 
 ```bash
 $ helm template  ./helm/ms-app -f backend-values.yaml 
 ```
 
-## Frontend installation
+## Frontend installation
 
 ```bash
 $ export NAMESPACE=homezone-dev

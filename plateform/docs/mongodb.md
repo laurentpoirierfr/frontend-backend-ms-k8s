@@ -6,7 +6,7 @@
 ```bash
 $ export NAMESPACE=mongodb
 $ kubectl create ns ${NAMESPACE}
-$ helm show values bitnami/mongodb > values-bitnami.yaml
+#$ helm show values bitnami/mongodb > values-bitnami.yaml
 $ helm install keycloack bitnami/mongodb -f values-bitnami.yaml -n ${NAMESPACE}
 ```
 

@@ -17,7 +17,7 @@ $ kubectl get all -n keycloak
 $ kubectl edit svc keycloak-http -n keycloak
 ```
 
-
+```bash
 NAME: keycloack
 LAST DEPLOYED: Mon Sep 25 16:28:20 2023
 NAMESPACE: keycloak
@@ -48,3 +48,4 @@ To access Keycloak from outside the cluster execute the following commands:
 
   echo Username: admin
   echo Password: $(kubectl get secret --namespace keycloak keycloack-keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+```  

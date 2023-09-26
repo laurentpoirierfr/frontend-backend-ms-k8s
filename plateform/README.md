@@ -1,5 +1,17 @@
 # README
 
+
+## Versions
+
+
+| Tools  | Version | 
+| :--------------- |:---------------:| 
+| minikube | v1.31.2 | 
+| k8s | v1.27.4 | 
+| kubectl | v1.28.2 | 
+| helm | v3.12.3 | 
+
+
 ## Installation de Minikube
 
 * https://kubernetes.io/fr/docs/tasks/tools/install-minikube/

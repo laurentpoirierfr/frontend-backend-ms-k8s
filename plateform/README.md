@@ -16,14 +16,14 @@ $ minikube ip
 $ sudo vi /etc/resolv.conf
 ```
 
-Ajout du domaine **homezone.dev** en point sur le résolveur dns de minikube.
+Ajout du domaine **local** en point sur le résolveur dns de minikube.
 
 ```bash
 search .
 nameserver 127.0.0.53
 options edns0 trust-ad
 
-search homezone.dev
+search local
 nameserver 192.168.49.2
 timeout 5
 ```
@@ -49,3 +49,4 @@ $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1
 * https://alxrodav.medium.com/keycloak-custom-login-theme-21be10ad3f4
 * https://github.com/briantward/ansible-keycloak/tree/main
 * https://www.talkingquickly.co.uk/webapp-authentication-keycloak-OAuth2-proxy-nginx-ingress-kubernetes
+* https://symbiosis.host/blog/oauth2-proxy

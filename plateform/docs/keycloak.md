@@ -10,11 +10,12 @@ $ make docker-push
 ## Installation
 
 ```bash
-$ kubectl create ns keycloak
+$ export NAMESPACE=keycloak
+$ kubectl create ns ${NAMESPACE}
 $ helm show values bitnami/keycloak > values-bitnami.yaml
-$ helm install keycloack bitnami/keycloak -f values-bitnami.yaml -n keycloak
-$ kubectl get all -n keycloak
-$ kubectl edit svc keycloak-http -n keycloak
+$ helm install keycloack bitnami/keycloak -f values-bitnami.yaml -n ${NAMESPACE}
+$ kubectl get all -n ${NAMESPACE}
+$ kubectl edit svc keycloak-http -n ${NAMESPACE}
 ```
 
 ```bash

@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: bluehousemax/backend-app
+  repository: localhost:5000/backend-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"

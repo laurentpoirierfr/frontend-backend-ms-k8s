@@ -1,0 +1,33 @@
+# Default values for ms-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: localhost:5000/backend-app
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+env:          
+ - name: "PORT"
+   value: "8080"
+ - name: "GIN_MODE"
+   value: "release"
+
+health:
+  liveness: "/ops/info"
+  readiness: "/ops/info"
+
+imagePullSecrets: []
+nameOverride: "backend-app"
+fullnameOverride: "backend-app"  
+
+ingress:
+  enabled: true
+  hosts:
+    - host: backend.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific

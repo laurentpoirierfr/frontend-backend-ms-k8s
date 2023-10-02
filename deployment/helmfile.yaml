@@ -1,0 +1,20 @@
+repositories:
+ - name: homezone-helm-charts
+   url: https://laurentpoirierfr.github.io/helm-charts/
+
+releases:
+- name: backend
+  namespace: homezone-dev
+  chart: homezone-helm-charts/ms-app
+  version: 0.1.0
+  missingFileHandler: Warn  
+  values:
+    - ./backend/values.yaml.gotmpl      
+
+- name: frontend
+  namespace: homezone-dev
+  chart: homezone-helm-charts/ms-app
+  version: 0.1.0
+  missingFileHandler: Warn  
+  values:
+    - ./frontend/values.yaml.gotmpl      

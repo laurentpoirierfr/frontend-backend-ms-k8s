@@ -18,11 +18,18 @@
 * https://kubernetes.io/fr/docs/tasks/tools/install-minikube/
 
 ```bash
-$ minikube start --memory 8192 --cpus 4
+$ minikube start --memory 8192 --cpus 4 
 $ minikube addons enable metrics-server
 $ minikube addons enable ingress
 $ minikube addons enable ingress-dns
+$ minikube addons enable registry
 $ minikube ip
+```
+
+Exposition de la registry docker
+
+```bash
+$ kubectl port-forward --namespace kube-system service/registry 5000:80
 ```
 
 * minikube ip ==> **192.168.49.2**
@@ -80,3 +87,6 @@ $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1
 
 * https://ibrahimhkoyuncu.medium.com/kubernetes-ingress-external-authentication-with-oauth2-proxy-and-keycloak-9924a3b2d34a
 * https://symbiosis.host/blog/oauth2-proxy
+
+
+* https://minikube.sigs.k8s.io/docs/handbook/registry/

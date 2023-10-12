@@ -1,4 +1,5 @@
-IMAGE_NAME="localhost:5000/backend-app:latest"
+# IMAGE_NAME="localhost:5000/backend-app:latest"
+IMAGE_NAME="registry.local/backend-app:latest"
 
 test: swagger
 	go test -v -cover -short ./...

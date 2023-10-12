@@ -1,0 +1,20 @@
+# FROM : helm template  homezone-helm-charts/ms-app --version 0.1.0 --set ingress.enabled=true > all.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: registry-ingress
+spec:
+  tls:
+  - hosts:
+    - registry.local
+  rules:
+    - host: "registry.local"
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: registry
+                port:
+                  number: 5000

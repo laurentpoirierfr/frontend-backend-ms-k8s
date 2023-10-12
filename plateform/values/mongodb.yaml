@@ -1,0 +1,11 @@
+image:
+  registry: docker.io
+  repository: bitnami/mongodb
+  tag: 7.0.1-debian-11-r0
+auth:
+  enabled: true
+  rootUser: root
+  rootPassword: "password"
+  usernames: ["mongodb"]
+  passwords: ["password"]
+  databases: ["homezone"]

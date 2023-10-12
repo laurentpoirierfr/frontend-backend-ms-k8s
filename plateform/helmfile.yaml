@@ -1,0 +1,49 @@
+repositories:
+ - name: prometheus-community
+   url: https://prometheus-community.github.io/helm-charts
+
+ - name: grafana 
+   url:  https://grafana.github.io/helm-charts
+
+ - name: bitnami 
+   url: https://charts.bitnami.com/bitnami
+   
+releases:
+# Databases
+- name: postgresql
+  namespace: hz-databases
+  chart: bitnami/postgresql
+  version: 13.0.0
+  values:
+    - ./values/postgresql.yaml
+
+- name: mongodb
+  namespace: hz-databases
+  chart: bitnami/mongodb
+  version: 14.0.4
+  values:
+    - ./values/mongodb.yaml
+
+# Keycloak
+- name: keycloak
+  namespace: hz-keycloak
+  chart: bitnami/keycloak
+  version: 16.1.5
+  values:
+    - ./values/keycloak.yaml
+
+# Monitoring
+- name: prometheus
+  namespace: hz-monitoring
+  chart: prometheus-community/prometheus
+  version: 25.1.0
+  values:
+    - ./values/prometheus.yaml
+
+- name: loki
+  namespace: hz-monitoring
+  chart: grafana/loki-stack
+  version: 2.9.11
+  values:
+    - ./values/loki.yaml
+

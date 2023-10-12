@@ -1,0 +1,22 @@
+image:
+  registry: docker.io
+  repository: bluehousemax/keycloack
+  tag: latest
+
+ingress:
+  enabled: true
+  hostname: keycloak.local
+
+auth:
+  adminUser: "admin"
+  adminPassword: "password"
+
+postgresql:
+  enabled: false  
+
+externalDatabase:
+  host: "postgresql.hz-databases.svc.cluster.local"  
+  port: 5432
+  user: "postgres"
+  database: "keycloak"
+  password: "password"

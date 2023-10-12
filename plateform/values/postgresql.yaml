@@ -1,0 +1,19 @@
+global:
+  postgresql:
+    auth:
+      postgresPassword: "password"
+      username: "postgres"
+      password: "password"
+      database: "keycloak"
+image:
+  registry: docker.io
+  repository: bitnami/postgresql
+  tag: 15.4.0-debian-11-r39
+clusterDomain: postgresql.local
+
+# auth:
+#   enablePostgresUser: true
+#   postgresPassword: "password"
+#   username: "postgres"
+#   password: "password"
+#   database: "keycloak"

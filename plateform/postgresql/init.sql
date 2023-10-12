@@ -1,0 +1,5 @@
+CREATE DATABASE keycloak;
+GRANT ALL PRIVILEGES ON DATABASE keycloak TO postgres;
+
+CREATE DATABASE homezone;
+GRANT ALL PRIVILEGES ON DATABASE homezone TO postgres;

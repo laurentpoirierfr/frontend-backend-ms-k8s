@@ -18,6 +18,7 @@
 * https://kubernetes.io/fr/docs/tasks/tools/install-minikube/
 
 ```bash
+$ minikube delete
 $ minikube start --memory 8192 --cpus 4 
 $ minikube addons enable metrics-server
 $ minikube addons enable ingress
@@ -90,3 +91,13 @@ $ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1
 
 
 * https://minikube.sigs.k8s.io/docs/handbook/registry/
+
+* https://medium.com/aeturnuminc/monitoring-stack-deployment-to-a-kubernetes-cluster-prometheus-grafana-alertmanager-loki-dcc7339d4f19
+
+
+Dashboards IDs : https://grafana.com/grafana/dashboards/
+
+Pod Memory Table — 11672 (Use data-source as Prometheus)
+Advanced Node Metrics — 11074 (Use data-source as Prometheus)
+Application Logs — 13639 (Use data-source as Loki)
+Kubernetes Cluster Monitoring (via Prometheus) — 3119 (Use data-source as Prometheus)

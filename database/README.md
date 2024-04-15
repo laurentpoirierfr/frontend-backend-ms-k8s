@@ -1,6 +1,6 @@
 # README
 
-## Database Schema
+## Database Schema
 
 ![Schema](./docs/assets/schema.png)
 
